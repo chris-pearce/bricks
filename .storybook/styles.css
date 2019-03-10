@@ -1,0 +1,25 @@
+/**
+ * Global styles.
+ *
+ * NOTE we want to avoid too many global styles as we're trying to replicate, as
+ * close as possible, a consumers environment.
+ */
+
+html {
+  padding: 1.5rem;
+}
+
+/**
+ * Specific styles.
+ *
+ * NOTE must always be namespaced with "storybook-".
+ */
+
+.storybook-icon-button {
+  border: 1px solid gray;
+  border-radius: 9px;
+  display: block;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.6rem 0.8rem;
+}
