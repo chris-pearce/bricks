@@ -1,0 +1,37 @@
+{
+  "name": "@bricks/spacing",
+  "version": "0.0.0",
+  "description": "A component for applying spacing between components.",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "umd": "lib/bricks-spacing.min.js",
+  "types": "lib/index.d.ts",
+  "repository": "git@github.com:chris-pearce/bricks.git",
+  "author": "Chris Pearce <hello@cjpearce.com>",
+  "license": "MIT",
+  "keywords": [
+    "components",
+    "design-systems",
+    "ui",
+    "ui-components",
+    "ui-kit",
+    "accessible-components",
+    "accessible-ui",
+    "accessibility"
+  ],
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Tests coming punk…\"",
+    "build": "node ../../scripts/build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
