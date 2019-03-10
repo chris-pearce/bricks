@@ -1,0 +1,15 @@
+{
+  "lerna": "0.0.0",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "publishConfig": {
+    "access": "public"
+  },
+  "command": {
+    "run": {
+      "npmClient": "yarn"
+    }
+  },
+  "registry": "https://registry.npmjs.org/",
+  "version": "independent"
+}

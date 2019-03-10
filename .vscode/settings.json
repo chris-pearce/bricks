@@ -1,0 +1,19 @@
+{
+  "css.validate": false,
+  "editor.rulers": [80],
+  "eslint.packageManager": "yarn",
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "javascript.format.enable": false,
+  "javascript.validate.enable": false,
+  "less.validate": false,
+  "markdown.extension.italic.indicator": "_",
+  "markdown.extension.toc.unorderedList.marker": "-",
+  "postcss.validate": false,
+  "prettier.eslintIntegration": true,
+  "prettier.proseWrap": "never",
+  "prettier.stylelintIntegration": true,
+  "rewrap.wrappingColumn": 80,
+  "scss.validate": false
+}
