@@ -1,10 +1,14 @@
 import React from 'react';
 import propTypes from 'prop-types';
 
-const HideVisually = ({ children, isInline }) => {
+const HideVisually = ({ children, isInline, ...props }) => {
   const Tag = isInline ? 'span' : 'div';
 
-  return <Tag className="bricks-hide-visually-root">{children}</Tag>;
+  return (
+    <Tag {...props} className="bricks-hide-visually">
+      {children}
+    </Tag>
+  );
 };
 
 HideVisually.propTypes = {

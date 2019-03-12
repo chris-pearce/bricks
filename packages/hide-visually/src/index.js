@@ -1,1 +1,1 @@
-export default from './HideVisually';
+export { default as HideVisually } from './HideVisually';

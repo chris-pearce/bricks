@@ -18,4 +18,13 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/jsx-filename-extension': 'off',
   },
+  // settings: {
+  //   'import/resolver': {
+  //     'babel-module': {},
+  //     node: {
+  //       extensions: ['.js'],
+  //       moduleDirectory: ['node_modules', '.'],
+  //     },
+  //   },
+  // },
 };
