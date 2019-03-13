@@ -6,6 +6,7 @@ version](https://img.shields.io/npm/v/@bricks/hide-visually.svg?longCache=true&s
 ## Table of Contents <!-- omit in toc -->
 
 - [Description](#description)
+  - [Further Reading](#further-reading)
 - [API](#api)
   - [Examples](#examples)
     - [`children`](#children)
@@ -13,13 +14,12 @@ version](https://img.shields.io/npm/v/@bricks/hide-visually.svg?longCache=true&s
     - [`...props`](#props)
 - [Installation](#installation)
 - [Sandbox](#sandbox)
-- [Further Reading](#further-reading)
 
 ## Description
 
-We should always provide a text representation for visual elements as per WCAG guideline 1.34.
+We should always provide a text alternative for visual elements as per [WCAG Success Criterion **1.1.1 Non-text Content**](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html).
 
-If the visual element is a native interactive element, such as a `<button>` element, then we can use the `aria-label` attribute. For example, on a button that only contains a "hamburger" SVG icon we could use it like this:
+If the visual element is a native interactive element, such as a `<button>` element, then we can use the `aria-label` attribute. For example, on a button that only contains a "hamburger" SVG icon, we could use it like this:
 
 ```html
 <button aria-label="Open menu" type="button">
@@ -29,9 +29,9 @@ If the visual element is a native interactive element, such as a `<button>` elem
 </button>
 ```
 
-_`aria-hidden="true"` is assigned to the `<svg>` element to ensure that it is removed from the accessibility tree thus making it unavailable to assistive technologies._
+_💡 `aria-hidden="true"` is assigned to the `<svg>` element to ensure that it is removed from [The Accessibility Tree](https://developers.google.com/web/fundamentals/accessibility/semantics-builtin/the-accessibility-tree) thus making it unavailable to assistive technologies._
 
-An alternative way is to hide the text representation from visual users via CSS whilst ensuring it stays in the accessibility tree thus making it available to assistive technologies. For example:
+An alternative way is to hide the text alternative from visual users via CSS whilst ensuring it stays in the The Accessibility Tree thus making it available to assistive technologies. For example:
 
 ```html
 <button type="button">
@@ -42,19 +42,23 @@ An alternative way is to hide the text representation from visual users via CSS 
 </button>
 ```
 
-This alternative way is what the `HideVisually` component does.
+This alternative way is what this component does.
 
-The `aria-label` attribute is a nicer and easier implementation due to it being applied by an attribute as opposed to the `HideVisually` component which requires adding an element to the DOM. However, due to the `aria-label` attribute only working on native interactive elements the `HideVisually` component still has its use cases.
+_💡 The `aria-label` attribute is a nicer and easier implementation due to it being applied by an attribute as opposed to adding an element to the DOM as this component does. However, due to the `aria-label` attribute only working on native interactive elements the `HideVisually` component still has its use cases._
+
+### Further Reading
+
+- [See No Evil: Hidden Content and Accessibility](https://cloudfour.com/thinks/see-no-evil-hidden-content-and-accessibility/)
 
 ## API
 
-| Name       | Type      | Required | Description                                    |
-| ---------- | --------- | -------- | ---------------------------------------------- |
-| `children` | `node`    | Yes      | The contents.                                  |
-| `isInline` | `boolean` | No       | Changes the wrapping element to a `span`.      |
-| `...props` | `Object`  | No       | Further props, except for `className` (see\*). |
+| Name       | Type      | Required | Description                                                     |
+| ---------- | --------- | -------- | --------------------------------------------------------------- |
+| `children` | `node`    | Yes      | The contents.                                                   |
+| `isInline` | `boolean` | No       | Changes the wrapping element to a `span` thus making it inline. |
+| `...props` | `Object`  | No       | Further props, except for `className` (see ✋).                 |
 
-_\*This component's styles are purely functional, therefore, cannot be extended._
+**✋ This component's styles are purely functional, therefore, they cannot be extended.**
 
 ### Examples
 
@@ -84,12 +88,8 @@ _\*This component's styles are purely functional, therefore, cannot be extended.
 
 ## Installation
 
-Refer to the [**Installing a Component** section](../../README.md#installing-a-component) of the master `README.md`.
+Refer to the [**Installing a Component**](../../README.md#installing-a-component) section of the master `README.md`.
 
 ## Sandbox
 
 Refer to the [**Sandbox** section](../../README.md#sandbox) of the master `README.md`.
-
-## Further Reading
-
-- [See No Evil: Hidden Content and Accessibility](https://cloudfour.com/thinks/see-no-evil-hidden-content-and-accessibility/)

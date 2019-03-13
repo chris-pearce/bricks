@@ -7,9 +7,15 @@ Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-squ
 
 A bunch of accessible ([#a11y](https://twitter.com/search?src=typd&q=%23a11y)) React presentational components to help build your UI (brick by brick).
 
+**✋ Bricks is still in development and therefore isn't quite ready for consumption.**
+
 ## Table of Contents <!-- omit in toc -->
 
 - [Installing a Component](#installing-a-component)
+  - [Placeholders](#placeholders)
+    - [`<package-name>`](#package-name)
+    - [`<ComponentName>`](#componentname)
+    - [Case Formats](#case-formats)
   - [npm](#npm)
   - [Download/CDN](#downloadcdn)
 - [How to Add a Component](#how-to-add-a-component)
@@ -26,17 +32,33 @@ A bunch of accessible ([#a11y](https://twitter.com/search?src=typd&q=%23a11y)) R
   - [How Components are Styled Internally](#how-components-are-styled-internally)
     - [Global Styles](#global-styles)
   - [How Components are Styled Externally](#how-components-are-styled-externally)
+    - [`className` prop](#classname-prop)
+      - [Vanilla](#vanilla)
+      - [CSS Modules](#css-modules)
+    - [`styled-components`](#styled-components)
     - [Closed for Extension](#closed-for-extension)
     - [Placement](#placement)
-    - [Multiple Elements](#multiple-elements)
-    - [Provider Component](#provider-component)
-    - [Examples](#examples)
-      - [`className` prop](#classname-prop)
-        - [Vanilla](#vanilla)
-        - [CSS Modules](#css-modules)
-      - [`styled-components`](#styled-components)
-- [The Components](#the-components)
-  - [Coming Soon](#coming-soon)
+    - [Child Elements](#child-elements)
+- [Sandbox](#sandbox)
+- [Development](#development)
+  - [Installation](#installation)
+  - [Scripts](#scripts)
+    - [`yarn dev`](#yarn-dev)
+    - [`yarn bootstrap`](#yarn-bootstrap)
+    - [`yarn build:storybook`](#yarn-buildstorybook)
+    - [`yarn build`](#yarn-build)
+    - [`yarn precommit`](#yarn-precommit)
+    - [`yarn lint`](#yarn-lint)
+  - [Yarn Workspaces](#yarn-workspaces)
+  - [Visual Studio Code](#visual-studio-code)
+- [Roadmap](#roadmap)
+  - [Components](#components)
+    - [Coming Soon](#coming-soon)
+    - [Up for Consideration](#up-for-consideration)
+  - [Packages](#packages)
+  - [Documentation](#documentation)
+  - [Sandbox](#sandbox-1)
+  - [Tooling](#tooling)
 - [Browser support](#browser-support)
 - [Contributing](#contributing)
 - [License](#license)
@@ -52,16 +74,33 @@ Bricks is a [monorepo](<[https://en.wikipedia.org/wiki/Monorepo](https://medium.
 │   └── …
 ```
 
-The following instructions use a **`<package-name>`** placeholder to represent a component's package name which you can get from the `name` field of the package's `package.json` file, for example:
+### Placeholders
 
-[add link here]
+The following instructions use two placeholders to avoid repeating the same information in every package's `README.md` file.
 
-And a **`<ComponentName>`** placeholder that represent's the component/file name, for example:
+#### `<package-name>`
 
-- `HideVisually`
-- `Spacing`
+This placeholder represents a component's package name which you can get from the `name` field of the package's `package.json` file. For example:
 
-Package names use **kebab-case** and component/file names use **PascalCase**.
+```json
+"name": "@bricks/hide-visually"
+```
+
+—[source](https://github.com/chris-pearce/bricks/blob/96400348c352864c3a6d80db8b7bd45c44e39fb3/packages/hide-visually/package.json#L2)
+
+#### `<ComponentName>`
+
+This placeholder represents the component/file name, for example:
+
+| Component name | JavaScript file name | CSS file name      |
+| -------------- | -------------------- | ------------------ |
+| `HideVisually` | `Hidevisually.js`    | `HideVisually.css` |
+| `Spacing`      | `Spacing.js`         | `Spacing.css`      |
+
+#### Case Formats
+
+- Package names use **kebab-case**.
+- Component/file names use **PascalCase**.
 
 ### npm
 
@@ -77,7 +116,7 @@ If you prefer [Yarn](https://yarnpkg.com/en/), use this command instead:
 yarn add @bricks/<package-name> --dev
 ```
 
-**Make sure to install the `peerDependencies`.**
+**✋ Make sure to install the package's `peerDependencies`.**
 
 ### Download/CDN
 
@@ -106,7 +145,7 @@ const <ComponentName> = require('@bricks/<package-name>');
 import '@bricks/<package-name>/lib/<ComponentName>.css';
 ```
 
-_For general information on how Brick's is styled, see the [Styling section](#styling)._
+💡 _For general information on how Brick's is styled, see the [**Styling**](#styling) section._
 
 #### Example
 
@@ -185,34 +224,64 @@ Class selectors are always used and are structured like this:
 [scope-][component-name][element]
 ```
 
-So, for the `HideVisually` component, which is only one element, its class name is:
+_`[element]` will be removed if there's only one element._
+
+So, for the `HideVisually` component, which is only one element, the class name will be:
 
 ```
-bricks-hide-visually-root
+bricks-hide-visually
 ```
 
 #### Global Styles
 
-Bricks doesn't use any global styles, all styles are scoped to a component.
+Bricks doesn't use any global styles, all styles are scoped to a component by the parent element's class selector.
 
-If you're looking for _a lightweight and somewhat opinionated CSS foundation that is best suited to applications_ then we recommend [`backpack.css`](https://github.com/chris-pearce/backpack.css) 🎒🙂.
+If you're looking for _**a lightweight and somewhat opinionated CSS foundation that is best suited to applications**_ then we recommend [`backpack.css`](https://github.com/chris-pearce/backpack.css) 🎒🔌.
 
 ### How Components are Styled Externally
 
-It's up to you how you want to extend a component's styles. For example, you can use the `className` prop _or_ if CSS-in-JS is your thing you can extend that way. However, when you extend a component's styles you should be referencing Bricks' functional styles so you know what's already been provided and therefore what not to override. Additionally, never use Brick's CSS classes in your stylesheet, always provide your own.
+It's up to you how you want to extend a component's styles. For example, you can use the `className` prop _or_ if CSS-in-JS is your thing you can extend that way. For example:
+
+#### `className` prop
+
+##### Vanilla
+
+```jsx
+<Heading className="heading" />
+```
+
+##### CSS Modules
+
+```jsx
+<Heading className={styles.heading} />
+```
+
+#### `styled-components`
+
+```js
+const HeadingStyled = styled(Heading)`
+  // Your project styles
+`;
+```
+
+**✋ However, when you extend a component's styles you should be referencing Bricks' functional styles so you know what's already been provided and therefore what not to override.**
+
+Additionally, never use Brick's CSS classes in your stylesheet, always provide your own.
 
 #### Closed for Extension
 
-Certain components cannot be extended as they are purely functional, for example, the `HideVisually` component. These components will be labelled as such and will not allow further props to be applied to them.
+Certain components cannot be extended as they are purely functional, for example, the `HideVisually` component. These components will be labelled as such and will not allow a `className` prop to be applied.
 
 #### Placement
 
 You need to always make sure that Brick's component styles are imported before your own project styles to ensure the rules of the cascade and specificity apply.
 
-So, when looking at your compiled stylesheet you should always see Bricks CSS classes coming first:
+So, when looking at your compiled stylesheet you should always see Bricks CSS classes coming first, for example:
 
 ```css
-.bricks-heading-root {
+/* Your stylesheet */
+
+.bricks-heading {
   /* Bricks library styles */
 }
 
@@ -232,7 +301,9 @@ So, when looking at your compiled stylesheet you should always see Bricks CSS cl
 Or:
 
 ```css
-.bricks-heading-root {
+/* Your stylesheet */
+
+.bricks-heading {
   /* Bricks library styles */
 }
 
@@ -249,11 +320,13 @@ Or:
 }
 ```
 
-It really depends on where you're importing Brick's library styles and your project styles. As long as the library styles are imported first then everything will be fine.
+It really depends on where you import Brick's library styles and your own project styles within your project. As long as the library styles are imported first then everything will be fine.
 
-#### Multiple Elements
+#### Child Elements
 
-Some components are comprised of multiple elements. For example, the `FieldSet` component's HTML structure looks like this:
+**👷🏼‍ This section is a WIP and therefore incomplete.**
+
+> Some components are comprised of multiple elements but for some components you'll only have access to one `className` prop. For example, the `FieldSet` component's HTML structure looks like this:
 
 ```html
 <fieldset>
@@ -262,63 +335,153 @@ Some components are comprised of multiple elements. For example, the `FieldSet` 
 </fieldset>
 ```
 
-If you need to style a child element, in this case the `<legend>` element, you have a couple of options:
+> But only `<Fieldset>` is available. Therefore, to be able reach in and style the child element(s), in this case, the `<legend>` element, you have a few options: [?]
 
-- You can pass an array to the `className` prop where each item in the array represents an element's class name. The order is important,
+## Sandbox
 
-```jsx
-<Fieldset className={['fieldset-root', 'fieldset-legend']} />
-{
-  root: 'root',
-  legend: 'legend',
-}
-```
+Bricks uses [Storybook](https://storybook.js.org) for its sandbox.
 
-#### Provider Component
+**✋ The sandbox is not Brick's official documentation, for now, that's handled in the `README.md`'s.**
 
-_Coming soon…_
+The sandbox is used for two purposes:
 
-#### Examples
+1. As a development environment.
+2. A place where people can go to see Brick's components being used in certain scenerios and demoing their API's (props).
 
-##### `className` prop
+## Development
 
-###### Vanilla
+Bricks uses [Lerna](https://lernajs.io/) to manage its monorepo.
 
-```jsx
-<Heading className="heading" />
-```
+### Installation
 
-###### CSS Modules
+1. Clone the repository and `cd` into the project:
 
-```jsx
-<Heading className={styles.heading} />
-```
+   ```bash
+   git clone git@github.com:chris-pearce/bricks.git && cd bricks
+   ```
 
-##### `styled-components`
+2. Install the dependencies:
 
-```js
-const HeadingStyled = styled(Heading)`
-  // Your project styles
-`;
-```
+   ```bash
+   yarn install
+   ```
 
-## The Components
+3. Bootstrap the project using Lerna:
 
-- [`HideVisually`](packages/hide-visually/README.md)
-- [`Spacing`](packages/spacing/README.md)
+   ```bash
+   yarn bootstrap
+   ```
 
-### Coming Soon
+4. Build the project:
 
-- `Heading`
-- `Container`
-- `Fieldset`
-- `LongFormCopy`
-- `Icon`
-- `Media`
+   ```bash
+   yarn build
+   ```
+
+### Scripts
+
+_In the order they are listed in the master [`package.json`](package.json) file._
+
+#### `yarn dev`
+
+Launches the [Sandbox](#sandbox).
+
+_💡 The script detects all files within the `packages` folder ending in `.stories.js`._
+
+#### `yarn bootstrap`
+
+Bootstraps Lerna so all dependencies get linked for cross-component development.
+
+**✋ Will be removed as Bricks is using [Yarn Workspaces](#yarn-workspaces).**
+
+#### `yarn build:storybook`
+
+Builds the sandbox saving it to the `docs` folder.
+
+#### `yarn build`
+
+Builds all packages saving them to their `lib` folder.
+
+The following tasks are performed in this order:
+
+1. Clean the package's `lib` folder.
+2. Bundle the packages using [Rollup](https://rollupjs.org).
+3. Copy statics files to the package's `lib` folder.
+
+#### `yarn precommit`
+
+Perform a series of tasks using [`lint-staged`](https://github.com/okonet/lint-staged) which are automatically triggered when performing a git commit.
+
+The following tasks are performed in this order:
+
+1. Runs [Prettier](https://prettier.io/) over all processed files rewriting any issues.
+2. Lints all JavaScript files using [ESLint](https://eslint.org/) rewriting any issues (see [`yarn lint`](#yarn-lint)).
+
+#### `yarn lint`
+
+Lints all JavaScript files in the project using [ESLint](https://eslint.org/). See [.eslintignore](.eslintignore) for the files ESLint ignores.
+
+**✋ Runs automatically as part of the precommit hook.**
+
+### Yarn Workspaces
+
+_Will be explained soon…_
+
+Some further reading in the meantime:
+
+- [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)
+- [A Beginner's Guide to Lerna with Yarn Workspaces](https://medium.com/@jsilvax/a-workflow-guide-for-lerna-with-yarn-workspaces-60f97481149d)
+
+### Visual Studio Code
+
+_Will be explained soon…_
+
+## Roadmap
+
+**✋ The roadmap will be migrated to GitHub Issues.**
+
+### Components
+
+#### Coming Soon
+
+1. `Heading`
+2. `Container`
+3. `Fieldset`
+4. `LongFormCopy`
+5. `Icon`
+6. `Media`
+
+#### Up for Consideration
+
+- `Dialog`
+- `MenuButton`
+- `Toolip`
+
+### Packages
+
+1. Add tests.
+2. Add static types to the `index.d.ts` files using [TypeScript](https://www.typescriptlang.org/).
+
+### Documentation
+
+1. Complete `CONTRIBUTING.md`.
+2. Migrate roadmap to GitHub Issues.
+
+### Sandbox
+
+1. Deploy to [GitHub Pages](https://pages.github.com/).
+2. Add [CSSModules](https://github.com/css-modules/css-modules).
+
+### Tooling
+
+1. Add [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/).
+2. Add [Autoprefixer](https://github.com/postcss/autoprefixer) and possibly more [PostCSS](https://github.com/postcss/postcss) plugins.
+3. Add CI pipeline.
+4. Add [stylelint](https://github.com/stylelint/stylelint).
 
 ## Browser support
 
-Here is the [Browserslist](https://github.com/browserslist/browserslist) query Bricks uses:
+Here's the [Browserslist](https://github.com/browserslist/browserslist) query Bricks uses:
 
 ```bash
 last 4 versions and > 0.5%,
@@ -329,8 +492,6 @@ not dead
 ```
 
 Which you can see [here](https://browserl.ist/?q=last+4+versions+and+%3E+0.5%25%2C+Firefox+ESR%2C+not+ie+%3C+11%2C+not+op_mini+all%2C+not+dead).
-
-[Autoprefixer](https://github.com/postcss/autoprefixer) is applied to each of Brick's component's CSS.
 
 ## Contributing
 

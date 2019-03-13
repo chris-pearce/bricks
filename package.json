@@ -8,13 +8,10 @@
   "scripts": {
     "dev": "start-storybook -p 9001 -c .storybook",
     "bootstrap": "lerna bootstrap",
-    "test": "lerna run test --stream",
-    "build:storybook": "build-storybook -c .storybook -o .out",
+    "build:storybook": "build-storybook -c .storybook -o docs",
     "build": "lerna exec --scope '@bricks/*' --concurrency 1 -- yarn build",
-    "publish": "lerna publish",
     "precommit": "lint-staged",
-    "lint": "eslint .",
-    "lint:fix": "yarn run lint -- --fix"
+    "lint": "eslint ."
   },
   "husky": {
     "hooks": {
