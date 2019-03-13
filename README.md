@@ -343,7 +343,7 @@ It really depends on where you import Brick's library styles and your own projec
 
 Bricks uses [Storybook](https://storybook.js.org) for its sandbox, view here: <https://chris-pearce.github.io/bricks/>.
 
-**✋ The sandbox is not Brick's official documentation, for now, that's handled in the `README.md`'s.**
+**✋ The sandbox is not Brick's official documentation, that is handled via the `README.md`'s.**
 
 The sandbox is used for two purposes:
 

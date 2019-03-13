@@ -56,7 +56,7 @@ _💡 The `aria-label` attribute is a nicer and easier implementation due to it 
 | ---------- | --------- | -------- | --------------------------------------------------------------- |
 | `children` | `node`    | Yes      | The contents.                                                   |
 | `isInline` | `boolean` | No       | Changes the wrapping element to a `span` thus making it inline. |
-| `...props` | `Object`  | No       | Further props, except for `className` (see ✋).                 |
+| `...props` | `spread`  | No       | Further props, except for `className` (see ✋).                 |
 
 **✋ This component's styles are purely functional, therefore, they cannot be extended.**
 
