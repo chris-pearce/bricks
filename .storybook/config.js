@@ -1,9 +1,13 @@
-import { addParameters, configure } from '@storybook/react';
+import { addDecorator, addParameters, configure } from '@storybook/react';
+import { withA11y } from '@storybook/addon-a11y';
 import './styles.css';
+
+addDecorator(withA11y);
 
 addParameters({
   options: {
     name: '🧱 Bricks',
+    showPanel: true,
   },
 });
 

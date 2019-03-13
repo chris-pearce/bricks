@@ -7,6 +7,8 @@ Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-squ
 
 A bunch of accessible ([#a11y](https://twitter.com/search?src=typd&q=%23a11y)) React presentational components to help build your UI (brick by brick).
 
+[View Sandbox](https://chris-pearce.github.io/bricks).
+
 **✋ Bricks is still in development and therefore isn't quite ready for consumption.**
 
 ## Table of Contents <!-- omit in toc -->
@@ -44,8 +46,8 @@ A bunch of accessible ([#a11y](https://twitter.com/search?src=typd&q=%23a11y)) R
   - [Installation](#installation)
   - [Scripts](#scripts)
     - [`yarn dev`](#yarn-dev)
+    - [`yarn deploy:sandbox`](#yarn-deploysandbox)
     - [`yarn bootstrap`](#yarn-bootstrap)
-    - [`yarn build:storybook`](#yarn-buildstorybook)
     - [`yarn build`](#yarn-build)
     - [`yarn precommit`](#yarn-precommit)
     - [`yarn lint`](#yarn-lint)
@@ -339,7 +341,7 @@ It really depends on where you import Brick's library styles and your own projec
 
 ## Sandbox
 
-Bricks uses [Storybook](https://storybook.js.org) for its sandbox.
+Bricks uses [Storybook](https://storybook.js.org) for its sandbox, view here: <https://chris-pearce.github.io/bricks/>.
 
 **✋ The sandbox is not Brick's official documentation, for now, that's handled in the `README.md`'s.**
 
@@ -388,15 +390,15 @@ Launches the [Sandbox](#sandbox).
 
 _💡 The script detects all files within the `packages` folder ending in `.stories.js`._
 
+#### `yarn deploy:sandbox`
+
+Deploys the sandbox to the [GitHub Pages site](https://chris-pearce.github.io/bricks) using [storybook-deployer](https://github.com/storybooks/storybook-deployer).
+
 #### `yarn bootstrap`
 
 Bootstraps Lerna so all dependencies get linked for cross-component development.
 
 **✋ Will be removed as Bricks is using [Yarn Workspaces](#yarn-workspaces).**
-
-#### `yarn build:storybook`
-
-Builds the sandbox saving it to the `docs` folder.
 
 #### `yarn build`
 
@@ -469,8 +471,8 @@ _Will be explained soon…_
 
 ### Sandbox
 
-1. Deploy to [GitHub Pages](https://pages.github.com/).
-2. Add [CSSModules](https://github.com/css-modules/css-modules).
+1. Add [CSSModules](https://github.com/css-modules/css-modules).
+2. Add the [storybook-readme](https://github.com/tuchk4/storybook-readme/issues/118) addon.
 
 ### Tooling
 
@@ -478,6 +480,7 @@ _Will be explained soon…_
 2. Add [Autoprefixer](https://github.com/postcss/autoprefixer) and possibly more [PostCSS](https://github.com/postcss/postcss) plugins.
 3. Add CI pipeline.
 4. Add [stylelint](https://github.com/stylelint/stylelint).
+5. Add `babel-module-resolver`.
 
 ## Browser support
 

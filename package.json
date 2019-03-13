@@ -7,8 +7,8 @@
   ],
   "scripts": {
     "dev": "start-storybook -p 9001 -c .storybook",
+    "deploy:sandbox": "storybook-to-ghpages -s public",
     "bootstrap": "lerna bootstrap",
-    "build:storybook": "build-storybook -c .storybook -o docs",
     "build": "lerna exec --scope '@bricks/*' --concurrency 1 -- yarn build",
     "precommit": "lint-staged",
     "lint": "eslint ."
@@ -36,7 +36,9 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-a11y": "^5.0.1",
     "@storybook/react": "^5.0.1",
+    "@storybook/storybook-deployer": "^2.8.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",

@@ -1,0 +1,9 @@
+.storybook-example-spacing:not(:last-child) {
+  margin-bottom: 3rem;
+}
+
+.storybook-example-spacing__indicator {
+  background-color: #f54c1b;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}

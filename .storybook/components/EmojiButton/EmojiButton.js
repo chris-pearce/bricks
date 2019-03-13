@@ -2,12 +2,12 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { HideVisually } from '../../../packages/hide-visually/src';
 import '../../../packages/hide-visually/src/HideVisually.css';
-import './EmojiButton.css';
+import './EmojiButton.module.css';
 
 const EmojiButton = ({ label, emoji }) => (
-  <button className="storybook-emoji-button" type="button">
+  <button className="root" type="button">
     <HideVisually>{label}</HideVisually>
-    <span className="storybook-emoji-button__emoji">{emoji}</span>
+    <span className="emoji">{emoji}</span>
   </button>
 );
 
