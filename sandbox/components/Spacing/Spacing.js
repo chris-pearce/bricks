@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { Spacing as SpacingBricks } from '../../../packages/spacing/src';
-import tokens from '../../constants/tokens';
+import { Spacing as SpacingBricks } from 'packages/spacing/src';
+import tokens from 'sandbox/constants/tokens';
 
 const Spacing = ({ children, size }) => (
   <SpacingBricks size={tokens.spacing[size]}>{children}</SpacingBricks>

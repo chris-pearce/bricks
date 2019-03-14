@@ -4,7 +4,11 @@
  * backpack.css library in `./preview-head.html`.
  */
 
+/**
+ * 1. This is needed to provide some padding to the content `<iframe>`.
+ */
+
 html {
   color: #333;
-  padding: 1.5rem;
+  padding: 1.5rem; /* 1 */
 }

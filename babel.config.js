@@ -20,5 +20,15 @@ module.exports = {
         removeImport: true,
       },
     ],
+    [
+      'babel-plugin-module-resolver',
+      {
+        root: ['.'],
+        alias: {
+          sandbox: './sandbox',
+          packages: './packages',
+        },
+      },
+    ],
   ].filter(Boolean),
 };

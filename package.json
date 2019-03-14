@@ -6,7 +6,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "start-storybook -p 9001 -c .storybook",
+    "dev": "start-storybook -p 9001 -c sandbox",
     "deploy:sandbox": "storybook-to-ghpages -s public",
     "bootstrap": "lerna bootstrap",
     "build": "lerna exec --scope '@bricks/*' --concurrency 1 -- yarn build",
@@ -41,6 +41,7 @@
     "@storybook/storybook-deployer": "^2.8.1",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.5",
+    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "backpack.css": "^2.0.0",
     "chalk": "^2.4.2",

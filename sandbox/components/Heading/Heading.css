@@ -1,9 +1,8 @@
-.storybook-heading {
-  color: darkslategrey;
+.sandbox-heading {
   font-variant-caps: all-small-caps;
 }
 
-.storybook-heading span {
+.sandbox-heading span {
   display: inline-block;
   margin-left: 0.2rem;
 }

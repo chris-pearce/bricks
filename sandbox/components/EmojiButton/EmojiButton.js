@@ -1,7 +1,7 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { HideVisually } from '../../../packages/hide-visually/src';
-import '../../../packages/hide-visually/src/HideVisually.css';
+import { HideVisually } from 'packages/hide-visually/src';
+import 'packages/hide-visually/src/HideVisually.css';
 import './EmojiButton.module.css';
 
 const EmojiButton = ({ label, emoji }) => (

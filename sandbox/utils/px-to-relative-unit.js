@@ -1,4 +1,4 @@
-import rootFontSizes from '../constants/root-font-sizes';
+import rootFontSizes from 'sandbox/constants/root-font-sizes';
 
 const pxToRelativeUnit = (px, unit, root) =>
   `${Number((px / root).toFixed(2))}${unit}`;

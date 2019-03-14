@@ -1,4 +1,4 @@
-import { pxToRem } from '../utils/px-to-relative-unit';
+import { pxToRem } from 'sandbox/utils/px-to-relative-unit';
 import rootFontSizes from './root-font-sizes';
 import sizes from './sizes';
 
