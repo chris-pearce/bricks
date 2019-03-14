@@ -54,13 +54,8 @@ A bunch of accessible ([#a11y](https://twitter.com/search?src=typd&q=%23a11y)) R
   - [Yarn Workspaces](#yarn-workspaces)
   - [Visual Studio Code](#visual-studio-code)
 - [Roadmap](#roadmap)
-  - [Components](#components)
-    - [Coming Soon](#coming-soon)
-    - [Up for Consideration](#up-for-consideration)
-  - [Packages](#packages)
-  - [Documentation](#documentation)
-  - [Sandbox](#sandbox-1)
-  - [Tooling](#tooling)
+  - [Coming Soon](#coming-soon)
+  - [Later](#later)
 - [Browser support](#browser-support)
 - [Contributing](#contributing)
 - [License](#license)
@@ -440,11 +435,9 @@ _Will be explained soon…_
 
 ## Roadmap
 
-**✋ The roadmap will be migrated to GitHub Issues.**
+This roadmap is specifically concerned with upcoming Bricks components.
 
-### Components
-
-#### Coming Soon
+### Coming Soon
 
 1. `Heading`
 2. `Container`
@@ -453,34 +446,11 @@ _Will be explained soon…_
 5. `Icon`
 6. `Media`
 
-#### Up for Consideration
+### Later
 
 - `Dialog`
 - `MenuButton`
 - `Toolip`
-
-### Packages
-
-1. Add tests.
-2. Add static types to the `index.d.ts` files using [TypeScript](https://www.typescriptlang.org/).
-
-### Documentation
-
-1. Complete `CONTRIBUTING.md`.
-2. Migrate roadmap to GitHub Issues.
-
-### Sandbox
-
-1. Add [CSSModules](https://github.com/css-modules/css-modules).
-2. Add the [storybook-readme](https://github.com/tuchk4/storybook-readme/issues/118) addon.
-
-### Tooling
-
-1. Add [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/).
-2. Add [Autoprefixer](https://github.com/postcss/autoprefixer) and possibly more [PostCSS](https://github.com/postcss/postcss) plugins.
-3. Add CI pipeline.
-4. Add [stylelint](https://github.com/stylelint/stylelint).
-5. Add `babel-module-resolver`.
 
 ## Browser support
 
