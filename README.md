@@ -127,7 +127,7 @@ yarn add @bricks/<package-name> --dev
 #### ES Modules
 
 ```js
-import <ComponentName> from '@bricks/<package-name>';
+import { <ComponentName> } from '@bricks/<package-name>';
 ```
 
 #### CommonJS Modules
@@ -147,7 +147,7 @@ import '@bricks/<package-name>/lib/<ComponentName>.css';
 #### Example
 
 ```js
-import HideVisually from '@bricks/HideVisually';
+import { HideVisually } from '@bricks/HideVisually';
 import '@bricks/hide-visually/lib/HideVisually.css';
 ```
 
@@ -321,18 +321,7 @@ It really depends on where you import Brick's library styles and your own projec
 
 #### Child Elements
 
-**👷🏼‍ This section is a WIP and therefore incomplete.**
-
-> Some components are comprised of multiple elements but for some components you'll only have access to one `className` prop. For example, the `FieldSet` component's HTML structure looks like this:
-
-```html
-<fieldset>
-  <legend><!-- legend text --></legend>
-  <!-- children -->
-</fieldset>
-```
-
-> But only `<Fieldset>` is available. Therefore, to be able reach in and style the child element(s), in this case, the `<legend>` element, you have a few options: [?]
+_Will be explained soon…_
 
 ## Sandbox
 

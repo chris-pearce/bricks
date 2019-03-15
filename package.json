@@ -1,7 +1,22 @@
 {
   "name": "bricks",
+  "description": "A bunch of accessible (#a11y) React presentational components to help build your UI (brick by brick)",
   "private": true,
   "license": "MIT",
+  "keywords": [
+    "components",
+    "design-systems",
+    "ui",
+    "ui-components",
+    "ui-kit",
+    "accessible-components",
+    "accessible-ui",
+    "accessibility"
+  ],
+  "bugs": {
+    "url": "https://github.com/chris-pearce/bricks/issues"
+  },
+  "author": "Chris Pearce <hello@cjpearce.com>",
   "workspaces": [
     "packages/*"
   ],

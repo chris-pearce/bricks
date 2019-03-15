@@ -2,7 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import tokens from 'sandbox/constants/tokens';
 import { Heading, Spacing as SpacingSandbox } from 'sandbox/components';
-import { Spacing } from 'packages/spacing';
+import { Spacing } from 'packages/spacing/src';
 import './SpacingSizes.css';
 
 const SpacingSizes = ({ isUpwards }) => (

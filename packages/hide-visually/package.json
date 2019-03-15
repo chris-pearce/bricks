@@ -9,6 +9,9 @@
   "repository": "git@github.com:chris-pearce/bricks.git",
   "author": "Chris Pearce <hello@cjpearce.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chris-pearce/bricks/issues"
+  },
   "keywords": [
     "components",
     "design-systems",
