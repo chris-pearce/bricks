@@ -1,0 +1,40 @@
+{
+  "name": "@bricks/tokens-provider",
+  "version": "0.0.0",
+  "description": "A provider component for accessing a consumers tokens.",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.es.js",
+  "umd": "lib/tokens-provider.min.js",
+  "types": "lib/index.d.ts",
+  "repository": "git@github.com:chris-pearce/bricks.git",
+  "author": "Chris Pearce <hello@cjpearce.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chris-pearce/bricks/issues"
+  },
+  "keywords": [
+    "components",
+    "design-systems",
+    "ui",
+    "ui-components",
+    "ui-kit",
+    "accessible-components",
+    "accessible-ui",
+    "accessibility"
+  ],
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "echo \"Tests coming punk…\"",
+    "build": "node ../../scripts/build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  }
+}
