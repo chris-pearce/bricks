@@ -8,10 +8,10 @@ version](https://img.shields.io/npm/v/@bricks/hide-visually.svg?longCache=true&s
 - [Description](#description)
   - [Further Reading](#further-reading)
 - [API](#api)
-  - [Examples](#examples)
-    - [`children`](#children)
-    - [`isInline`](#isinline)
-    - [`...props`](#props)
+- [Examples](#examples)
+  - [`children`](#children)
+  - [`isInline`](#isinline)
+  - [`...props`](#props)
 - [Installation](#installation)
 - [Sandbox](#sandbox)
 
@@ -56,13 +56,13 @@ _💡 The `aria-label` attribute is a nicer and easier implementation due to it 
 | ---------- | --------- | -------- | --------------------------------------------------------------- |
 | `children` | `node`    | Yes      | The contents.                                                   |
 | `isInline` | `boolean` | No       | Changes the wrapping element to a `span` thus making it inline. |
-| `...props` | `spread`  | No       | Further props, except for `className` (see ✋).                 |
+| `...props` | `object`  | No       | Further props, (see ✋).                                        |
 
-**✋ This component's styles are purely functional, therefore, they cannot be extended.**
+**✋ Refer to the [Closed for Extension](../../README.md#closed-for-extension) section of the master `README.md`.**
 
-### Examples
+## Examples
 
-#### `children`
+### `children`
 
 ```jsx
 <HideVisually>Your text</HideVisually>
@@ -74,13 +74,13 @@ _💡 The `aria-label` attribute is a nicer and easier implementation due to it 
 </HideVisually>
 ```
 
-#### `isInline`
+### `isInline`
 
 ```jsx
 <HideVisually isInline>Your text</HideVisually>
 ```
 
-#### `...props`
+### `...props`
 
 ```jsx
 <HideVisually id="uuid">Your text</HideVisually>
@@ -92,4 +92,4 @@ Refer to the [**Installing a Component**](../../README.md#installing-a-component
 
 ## Sandbox
 
-Refer to the [**Sandbox** section](../../README.md#sandbox) of the master `README.md`.
+Refer to the [**Sandbox**](../../README.md#sandbox) section of the master `README.md`.

@@ -30,6 +30,7 @@ A bunch of accessible ([#a11y](https://twitter.com/search?src=typd&q=%23a11y)) R
     - [JavaScript](#javascript)
     - [Styles](#styles-1)
     - [Example](#example-1)
+- [Tokens](#tokens)
 - [Styling](#styling)
   - [How Components are Styled Internally](#how-components-are-styled-internally)
     - [Global Styles](#global-styles)
@@ -48,13 +49,15 @@ A bunch of accessible ([#a11y](https://twitter.com/search?src=typd&q=%23a11y)) R
     - [`yarn dev`](#yarn-dev)
     - [`yarn deploy:sandbox`](#yarn-deploysandbox)
     - [`yarn bootstrap`](#yarn-bootstrap)
+    - [`yarn postbootstrap`](#yarn-postbootstrap)
     - [`yarn build`](#yarn-build)
     - [`yarn precommit`](#yarn-precommit)
     - [`yarn lint`](#yarn-lint)
+    - [`yarn clean:lib`](#yarn-cleanlib)
   - [Yarn Workspaces](#yarn-workspaces)
   - [Visual Studio Code](#visual-studio-code)
 - [Roadmap](#roadmap)
-  - [Coming Soon](#coming-soon)
+  - [Coming Soon…](#coming-soon)
   - [Later](#later)
 - [Browser support](#browser-support)
 - [Contributing](#contributing)
@@ -209,6 +212,12 @@ Add a `<link>` element to your document making sure it's placed before any of yo
 </html>
 ```
 
+## Tokens
+
+_Will be explained soon…_
+
+> Design tokens are the visual design atoms of the design system — specifically, they are named entities that store visual design attributes. We use them in place of hard-coded values (such as hex values for color or pixel values for spacing) in order to maintain a scalable and consistent visual system for UI development.—<https://www.lightningdesignsystem.com/design-tokens/>
+
 ## Styling
 
 ### How Components are Styled Internally
@@ -267,7 +276,7 @@ Additionally, never use Brick's CSS classes in your stylesheet, always provide y
 
 #### Closed for Extension
 
-Certain components cannot be extended as they are purely functional, for example, the `HideVisually` component. These components will be labelled as such and will not allow a `className` prop to be applied.
+Certain components cannot be extended as they are purely functional, for example, the `HideVisually` and `Spacing` components. These components will be labelled as such and will not allow `className` and/or `style` props to be applied.
 
 #### Placement
 
@@ -325,7 +334,7 @@ _Will be explained soon…_
 
 ## Sandbox
 
-Bricks uses [Storybook](https://storybook.js.org) for its sandbox, view here: <https://chris-pearce.github.io/bricks/>.
+Bricks uses [Storybook](https://storybook.js.org) for its sandbox, [view here](https://chris-pearce.github.io/bricks/).
 
 **✋ The sandbox is not Brick's official documentation, that is handled via the `README.md`'s.**
 
@@ -384,6 +393,10 @@ Bootstraps Lerna so all dependencies get linked for cross-component development.
 
 **✋ Will be removed as Bricks is using [Yarn Workspaces](#yarn-workspaces).**
 
+#### `yarn postbootstrap`
+
+Runs `yarn build` (see next script) directly after `yarn bootstrap`.
+
 #### `yarn build`
 
 Builds all packages saving them to their `lib` folder.
@@ -409,6 +422,10 @@ Lints all JavaScript files in the project using [ESLint](https://eslint.org/). S
 
 **✋ Runs automatically as part of the precommit hook.**
 
+#### `yarn clean:lib`
+
+Cleans all of the `lib` folders within each package.
+
 ### Yarn Workspaces
 
 _Will be explained soon…_
@@ -426,7 +443,7 @@ _Will be explained soon…_
 
 This roadmap is specifically concerned with upcoming Bricks components.
 
-### Coming Soon
+### Coming Soon…
 
 1. `Heading`
 2. `Container`

@@ -6,3 +6,4 @@ yarn-error.log*
 /packages/*/lib
 /packages/consumer/build
 /packages/consumer/public
+notes.md

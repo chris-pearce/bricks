@@ -8,11 +8,12 @@ version](https://img.shields.io/npm/v/@bricks/spacing.svg?longCache=true&style=p
 - [Description](#description)
   - [Further Reading](#further-reading)
 - [API](#api)
-  - [Examples](#examples)
-    - [`children`](#children)
-    - [`size`](#size)
-    - [`isUpwards`](#isupwards)
-    - [`...props`](#props)
+- [Examples](#examples)
+  - [`children`](#children)
+  - [`size`](#size)
+  - [`isUpwards`](#isupwards)
+  - [`...props`](#props)
+- [Tokens](#tokens)
 - [Installation](#installation)
 - [Sandbox](#sandbox)
 
@@ -30,52 +31,63 @@ This component can be used to apply vertical spacing between your components. Th
 
 ## API
 
-| Name        | Type      | Required | Description                              |
-| ----------- | --------- | -------- | ---------------------------------------- |
-| `children`  | `node`    | Yes      | The contents.                            |
-| `size`      | `string`  | Yes      | The size of the space (see ✋).          |
-| `isUpwards` | `boolean` | No       | Applies spacing in an upwards direction. |
-| `...props`  | `spread`  | No       | Further props.                           |
+| Name        | Type      | Required | Description                                                     |
+| ----------- | --------- | -------- | --------------------------------------------------------------- |
+| `children`  | `node`    | Yes      | The contents.                                                   |
+| `size`      | `string`  | Yes      | The size of the space (a valid CSS unit, e.g., `1rem`, `26px`). |
+| `isUpwards` | `boolean` | No       | Applies spacing in an upwards direction.                        |
+| `...props`  | `object`  | No       | Further props, (see ✋).                                        |
 
-**✋ It's up to you to provide a valid CSS unit, e.g., `1rem`, `26px`.**
+**✋ Refer to the [Closed for Extension](../../README.md#closed-for-extension) section of the master `README.md`.**
 
-### Examples
+## Examples
 
-#### `children`
+### `children`
 
 ```jsx
-<Spacing size={mySpacingScale.default}>
+<Spacing size={tokens.spacing.default}>
   <YourComponent />
 </Spacing>
 <YourComponent />
 ```
 
-#### `size`
+### `size`
 
 ```jsx
-<Spacing size={mySpacingScale.small}>
+<Spacing size={tokens.spacing.small}>
   <YourComponent />
 </Spacing>
 <YourComponent />
 ```
 
-#### `isUpwards`
-
 ```jsx
-<YourComponent />
-<Spacing isUpwards size={mySpacingScale.default}>
-  <YourComponent />
-</Spacing>
-```
-
-#### `...props`
-
-```jsx
-<Spacing id="uuid" size={mySpacingScale.default}>
+<Spacing size="40px">
   <YourComponent />
 </Spacing>
 <YourComponent />
 ```
+
+### `isUpwards`
+
+```jsx
+<YourComponent />
+<Spacing isUpwards size={tokens.spacing.default}>
+  <YourComponent />
+</Spacing>
+```
+
+### `...props`
+
+```jsx
+<Spacing id="uuid" size={tokens.spacing.small}>
+  <YourComponent />
+</Spacing>
+<YourComponent />
+```
+
+## Tokens
+
+Refer to the [**Tokens**](../../README.md#tokens) section of the master `README.md`.
 
 ## Installation
 
@@ -83,4 +95,4 @@ Refer to the [**Installing a Component**](../../README.md#installing-a-component
 
 ## Sandbox
 
-Refer to the [**Sandbox** section](../../README.md#sandbox) of the master `README.md`.
+Refer to the [**Sandbox**](../../README.md#sandbox) section of the master `README.md`.

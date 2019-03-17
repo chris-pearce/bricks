@@ -39,4 +39,4 @@ Refer to the [**Installing a Component**](../../README.md#installing-a-component
 
 ## Sandbox
 
-Refer to the [**Sandbox** section](../../README.md#sandbox) of the master `README.md`.
+Refer to the [**Sandbox**](../../README.md#sandbox) section of the master `README.md`.
