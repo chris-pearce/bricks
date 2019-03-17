@@ -1,8 +1,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import tokens from 'sandbox/constants/tokens';
-import { Heading, Spacing as SpacingSandbox } from 'sandbox/components';
-import { Spacing } from 'packages/spacing/src';
+import { Heading } from 'sandbox/components';
+import { Spacing } from 'packages/spacing';
 import './SpacingSizes.css';
 
 const SpacingSizes = ({ isUpwards }) => (
@@ -12,13 +12,11 @@ const SpacingSizes = ({ isUpwards }) => (
 
       return (
         <li className="sandbox-spacing-sizes" key={item}>
-          <SpacingSandbox size="small2x">
-            <Heading>
-              <>
-                {item} <span>({unit})</span>
-              </>
-            </Heading>
-          </SpacingSandbox>
+          <Heading>
+            <>
+              {item} <span>({unit})</span>
+            </>
+          </Heading>
           <div className="sandbox-spacing-sizes__indicator">
             <Spacing isUpwards={isUpwards} size={unit}>
               <div />

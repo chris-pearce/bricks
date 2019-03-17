@@ -9,6 +9,13 @@ const shared = {
 };
 
 export default Object.freeze({
+  color: {
+    black: '#000',
+    bodyCopy: '#eee',
+    brick: '#f54c1b',
+    grey: '#ccc',
+    white: '#fff',
+  },
   spacing: {
     [sizes.default]: pxToRem(shared.spacing.default),
     [sizes.large1x]: pxToRem(shared.spacing.default + 8),

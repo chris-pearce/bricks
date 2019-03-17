@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { HideVisually } from 'packages/hide-visually/src';
+import { HideVisually } from 'packages/hide-visually';
 import 'packages/hide-visually/src/HideVisually.css';
 import './EmojiButton.module.css';
 

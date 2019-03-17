@@ -1,0 +1,29 @@
+.sandbox-table caption,
+.sandbox-table th {
+  text-align: left;
+}
+
+.sandbox-table th {
+  border-bottom: 1px solid #ccc;
+  font-variant-caps: all-small-caps;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.sandbox-table th,
+.sandbox-table td {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.sandbox-table tbody td:not(:last-child) {
+  padding-right: 2rem;
+}
+
+.sandbox-table tbody tr:first-child td {
+  padding-top: 0.5rem;
+}
+
+.sandbox-table tbody tr:not(:last-child) td {
+  padding-bottom: 0.5rem;
+}

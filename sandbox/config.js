@@ -1,6 +1,6 @@
 import { addDecorator, addParameters, configure } from '@storybook/react';
 import { withA11y } from '@storybook/addon-a11y';
-import './styles.css';
+import './assets/styles/index.css';
 
 addDecorator(withA11y);
 
