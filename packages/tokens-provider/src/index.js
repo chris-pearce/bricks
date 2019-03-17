@@ -1,1 +1,1 @@
-export { default as TokensProvider } from './TokensProvider';
+export { default as TokensProvider, TokensConsumer } from './TokensProvider';
