@@ -1,0 +1,36 @@
+{
+  "name": "@bricks/consumer",
+  "description": "For simulating a consumers environment using CRA.",
+  "private": true,
+  "repository": "git@github.com:chris-pearce/bricks.git",
+  "author": "Chris Pearce <hello@cjpearce.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chris-pearce/bricks/issues"
+  },
+  "keywords": [
+    "components",
+    "design-systems",
+    "ui",
+    "ui-components",
+    "ui-kit",
+    "accessible-components",
+    "accessible-ui",
+    "accessibility"
+  ],
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-scripts": "2.1.8"
+  },
+  "devDependencies": {
+    "@bricks/spacing": "^0.0.0",
+    "@bricks/tokens-provider": "^0.0.0"
+  }
+}

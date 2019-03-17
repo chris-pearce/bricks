@@ -1,0 +1,15 @@
+.root {
+  background-color: aliceblue;
+  border-bottom: 1px solid lightblue;
+  margin-bottom: 3rem;
+  padding: 2rem 3rem;
+}
+
+.heading {
+  font-size: 2rem;
+}
+
+.byline {
+  color: #666;
+  font-style: italic;
+}
