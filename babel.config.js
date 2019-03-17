@@ -25,8 +25,8 @@ module.exports = {
       {
         root: ['.'],
         alias: {
-          sandbox: './sandbox',
           packages: './packages',
+          sandbox: './sandbox',
         },
       },
     ],

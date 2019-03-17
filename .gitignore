@@ -4,3 +4,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 /packages/*/lib
+/packages/consumer/build
+/packages/consumer/public
