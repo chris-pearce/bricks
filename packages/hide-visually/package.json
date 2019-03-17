@@ -1,7 +1,7 @@
 {
   "name": "@bricks/hide-visually",
-  "version": "0.0.0",
   "description": "A component that makes text available for screen reader users but not for visual users.",
+  "version": "0.0.0",
   "main": "lib/index.cjs.js",
   "module": "lib/index.es.js",
   "umd": "lib/bricks-hide-visually.min.js",

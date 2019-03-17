@@ -1,7 +1,7 @@
 {
   "name": "@bricks/spacing",
-  "version": "0.0.0",
   "description": "A component for applying vertical spacing between components.",
+  "version": "0.0.0",
   "main": "lib/index.cjs.js",
   "module": "lib/index.es.js",
   "umd": "lib/bricks-spacing.min.js",
@@ -32,9 +32,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {},
   "peerDependencies": {
     "react": "^16.8.4",
     "react-dom": "^16.8.4"
+  },
+  "dependencies": {
+    "@bricks/tokens-provider": "^0.0.0",
+    "@bricks/utils": "^0.0.0"
   }
 }
